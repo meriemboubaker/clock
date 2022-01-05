@@ -1,0 +1,178 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+    
+   
+}
+.clock{
+    width: 300px;
+    height:300px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #f3ec78;
+    background-image: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+    background-size: 100%;
+    background: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    animation: animate 1.5s linear infinite;
+    
+  
+
+}
+.clock::after{
+    content: '';
+    position: absolute;
+    background: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+    width: 15px;
+    height: 15px;
+    z-index: 11;
+    border-radius: 50%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%)
+}
+.clock .number{
+    --rotation:0;
+    position:absolute ;
+    width: 100%;
+    height:100%;
+    text-align: center;
+    font-size: 24px;
+    transform:rotate(var(--rotation));
+    background-color: #f3ec78;
+    background-image: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+    background-size: 100%;
+    background: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    animation: animate 1.5s linear infinite;
+}
+.clock .number1{
+    --rotation:30deg;
+}
+
+.clock .number2{
+    --rotation:60deg;
+}
+.clock .number3{
+    --rotation:90deg;
+}
+.clock .number4{
+    --rotation:120deg;
+}
+.clock .number5{
+    --rotation:150deg;
+}
+.clock .number6{
+    --rotation:180deg;
+}
+.clock .number7{
+    --rotation:210deg;
+}
+.clock .number8{
+    --rotation:240deg;
+}
+.clock .number9{
+    --rotation:270deg;
+}
+.clock .number10{
+    --rotation:300deg;
+}
+.clock .number11{
+    --rotation:330deg;
+}
+.clock .number12{
+    --rotation:360deg;
+}
+.clock .hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left : 50%;
+    width:10px;
+    height:50%;
+    background-color: black;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translate(-50%) rotate(calc(var(--rotation)*1deg));
+}
+.clock .hand.second{
+    width:2px;
+    height:40%;
+    background-color: tomato;
+
+}
+.clock .hand.minute{
+    width:4.5px;
+    height:40%;
+    background-color: rgb(158, 157, 157);
+
+}
+.clock .hand.hour{
+    width:5.5px;
+    height:35%;
+    background-color: rgb(158, 157, 157);
+
+}
+.wrapper{
+    height:100px;
+    width: 300px;
+    margin:70px;
+    border-radius:10px;
+    background-color: rgb(58, 37, 37);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+    animation: animate 1.5s linear infinite;
+   }
+.wrapper .display span{
+    font-size: 30px;
+    
+
+  line-height: 85px;
+  font-weight: 600;
+  background-color: #f3ec78;
+  background-image: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  animation: animate 1.5s linear infinite;
+  
+}
+.wrapper .display{
+    position:absolute;
+    background-color: black;
+    border-radius: 6px;
+    height: 87px;
+    width:290px;
+    text-align: center;
+   
+   
+
+}
+@keyframes animate {
+    100%{
+        filter:hue-rotate(360deg);
+    }
+}
+.wrapper span{
+    height:100%;
+    width:100%;
+    background: inherit;
+    border-radius: 10px;
+}
+.wrapper .span{
+filter:blur(10px)
+}
